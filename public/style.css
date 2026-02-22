@@ -145,3 +145,51 @@ body { background: #0b1020; color: #e9eefc; }
 .pill.danger {
   border-color: rgba(255, 90, 90, 0.35);
 }
+
+/* ===== Mobile fixes: name always visible ===== */
+@media (max-width: 520px) {
+  /* cards stack */
+  .card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  /* top row: name + badge */
+  .leftBlock {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  /* name may wrap to 2 lines on small screens */
+  .nameOnly {
+    white-space: normal;        /* allow wrap */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;       /* clamp */
+    -webkit-line-clamp: 2;      /* max 2 lines */
+    -webkit-box-orient: vertical;
+    max-width: 100%;
+  }
+
+  /* badge stays small and never pushes name off-screen */
+  .badge {
+    margin-left: 0;
+    flex: 0 0 auto;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  /* buttons go to next row and wrap nicely */
+  .pillgroup {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .pill {
+    flex: 1 1 auto;     /* let pills wrap and share space */
+    text-align: center;
+  }
+}
