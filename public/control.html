@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Status - Controller</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="control">
+    <header class="topbar">
+      <div class="title">
+        <div class="small">Controller</div>
+        <h1>Status</h1>
+      </div>
+
+      <div class="actions">
+        <button class="btn" id="allSuccess">Alles succes</button>
+        <button class="btn" id="allBusy">Alles bezig</button>
+        <button class="btn" id="allOff">Alles leeg</button>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="addbar">
+        <input id="nameInput" class="input" placeholder="Nieuwe naam…" maxlength="40" />
+        <button id="addBtn" class="btn">Toevoegen</button>
+      </section>
+
+      <div id="grid" class="grid"></div>
+
+      <footer class="hint">
+        PC display: <b>/display</b>
+      </footer>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="control.js"></script>
+  </body>
+</html>
